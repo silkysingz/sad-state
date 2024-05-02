@@ -1,0 +1,52 @@
+<head>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load('current', {packages:['wordtree']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Phrases');
+      data.addRows([
+        ['Gambians are still struggling to make ends meet'],
+        ['President Jawara 30-year tenure'],
+        ['Yaya Jammeh 22-year regime'],
+        ['Yaya force himself onto us through 1994 coup'],
+        ['Jammeh\'s tenure was characterized by human rights abuses'],
+        ['Jammeh\'s tenure was characterized by political repression'],
+        ['Jammeh\'s tenure was characterized by violence and intimidation'],
+        ['voted Jammeh out in 2016'],
+        ['hopes of change under Barrow'],
+        ['Barrow administration'],
+        ['self-serving individuals'],
+        ['clowns and opportunists'],
+        ['lavish payments to journalists'],
+        ['inadequate compensation for farmers'],
+    
+        ['Barrow worst president among the three'],
+        ['Robert Nasta Marley quote you can fool some people sometime but you cannot fool all the people all the time.']
+      ]);
+
+      var options = {
+        wordtree: {
+          format: 'implicit',
+          word: 'Gambia',
+          backgroundColor: '#f9f9f9',
+          fontName: 'Arial',
+          wordStyle: {
+            color: 'black',
+            fontName: 'Arial',
+            fontSize: 16
+          }
+        }
+      };
+
+      var chart = new google.visualization.WordTree(document.getElementById('wordtree_basic'));
+      chart.draw(data, options);
+    }
+  </script>
+</head>
+<body>
+  <div id="wordtree_basic" style="width: 100%; height: 100%;"></div>
+</body>
+</html>
